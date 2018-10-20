@@ -8,12 +8,15 @@
 - [Monza: Image Classification of Vehicle Make and Model Using Convolutional Neural Networks and Transfer Learninrk](https://github.com/ouceduxzk/Fine_Grained_Classification)
 
 
-#### 이미지 데이터셋
+#### 이미지 데이터
 - [스텐포드 자동차 이미지셋](./Stanford_car_dataset.md)
+  - 학습용 이미지 셋
 
-- [싱가폴 크롤링 이미지 데이터](contributhon2018/Team_A/2018-09-20-이미지 데이터/ 참조)
+- [싱가폴 크롤링 이미지 데이터](https://github.com/onycom-ankus/contributhon2018/tree/master/Team_A/2018-09-20-이미지%20데이터/)
+  - 2018년 9월 9일 ~ 9월 10일사이 올려진 사진을 대상으로 
+  - 총 101장
 
-- [지동차 크롤링 이미지 데이터](contributhon2018/Team_A/2018-09-20-이미지 데이터/)
+- [지동차 크롤링 이미지 데이터](https://github.com/onycom-ankus/contributhon2018/tree/master/Team_A/data_instargram/)
   - 2018-09-22-car-instar.zip (2018년 9월 22일에 올려진 "자동차" 이미지)
   - ...
   - 2018-10-16-car-instar.zip (2018년 10월 16일에 올려진 "자동차" 이미지)
