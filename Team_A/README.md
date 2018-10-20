@@ -11,8 +11,15 @@
 ## 2. 조원
 
 
-- [양지한(리더)](https://github.com/yangjeehan) / 김윤수 / [노지환](https://github.com/Ji-Ha) / [박문규](https://github.com/park-moonkyu) / [양지훈]() / [엄상현](https://github.com/djatkdgus789) / [윤시온]() / [이재수](https://github.com/ljs9643)
-
+- [양지한](https://github.com/yangjeehan) : 데이터 전처리 및 분석 담당, 리더 (@yangjeehan)
+- ~~김윤수~~ 
+- [노지환](https://github.com/Ji-Ha) : 데이터 분석 및 시각화 담당 (@Ji-Ha)
+- [박문규](https://github.com/park-moonkyu) : 데이터 전처리 및 분석 담당 (@park-moonkyu)
+- [양지훈](https://github.com/yanghun0070) : 데이터 전처리 및 분석 담당 (@yanghun0070)
+- [엄상현](https://github.com/djatkdgus789) : 데이터 분석 및 시각화 담당 (@djatkdgus789)
+- [윤시온](https://github.com/zionyun) : 데이터 분석 및 시각화 담당 (@zionyun)
+- [이재수](https://github.com/ljs9643) : 데이터 수집 및 문서화 담당 (@ljs9643)
+ 
 
 ## 3. 진행
 
