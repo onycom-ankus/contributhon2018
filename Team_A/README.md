@@ -11,7 +11,7 @@
 ## 2. 조원
 
 
-- 양지한(조장) / 김윤수 / 노지환 / 박문규 / 양지훈 / 엄상현 / 윤시온 / 이재수
+- [양지한(리더)](https://github.com/yangjeehan) / 김윤수 / [노지환](https://github.com/Ji-Ha) / [박문규](https://github.com/park-moonkyu) / [양지훈]() / [엄상현](https://github.com/djatkdgus789) / [윤시온]() / [이재수](https://github.com/ljs9643)
 
 
 ## 3. 진행
