@@ -22,3 +22,6 @@
   - 2018-10-16-car-instar.zip (2018년 10월 16일에 올려진 "자동차" 이미지)
   - 총 17,113장
 
+- [자동차 이미지 분석을 위한 자동차가 아닌 이미지 데이터](https://github.com/ljs9643/contributhon2018/tree/master/Team_A/Image_analysis/Nocar_image_set)
+  - 종 3,554 장
+  
