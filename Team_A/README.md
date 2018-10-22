@@ -95,4 +95,16 @@
 	: 분석 절차 정리
      - 문서화
         : 이재수 담당
+	
+------------------------
 
+#### 이미지 분석
+  
+1. [싱가폴 이미지 분석](https://github.com/ljs9643/contributhon2018/tree-save/master/Team_A/2018-09-20-%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EB%8D%B0%EC%9D%B4%ED%84%B0/README.md)
+- Logistic classification 
+- Google Inception v3.0
+
+2. 자동차 이미지 분석 
+- [자동차 여부 구분](https://github.com/onycom-ankus/contributhon2018/tree/master/Team_A/%EB%B6%84%EC%84%9D%ED%8C%80)
+- [자동차 모델 구분](https://github.com/onycom-ankus/contributhon2018/tree/master/Team_A/dl_model/inception/)
+- 모두 Google Inception v3.0 이용
