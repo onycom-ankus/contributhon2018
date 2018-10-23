@@ -103,7 +103,7 @@ public class ankusCrawler {
 			bw.close();
 			fw.close();
 		} catch (IOException e) {
-			System.out.println("오류가 발생했습니다."); 
+			System.out.println("�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		}
 		
@@ -112,3 +112,6 @@ public class ankusCrawler {
 		
 	}
 }
+
+
+//commit test

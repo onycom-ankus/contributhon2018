@@ -85,7 +85,7 @@ public class ankusCrawlerNaverNews {
 					br.close();
 				}
 			} catch (IOException e) {
-				System.out.println("getListPageInfo-1-오류가 발생했습니다."); 
+				System.out.println("getListPageInfo-1-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			}
 			
 			Document doc = Jsoup.parse(sb.toString());
@@ -106,10 +106,10 @@ public class ankusCrawlerNaverNews {
 //			System.out.println(url);
 			//hear 
 			try {
-				//idle타임 
+				//idle���엫 
 				Thread.sleep(200);
 			} catch (InterruptedException e) {
-				System.out.println("getListPageInfo-3-오류가 발생했습니다."); 
+				System.out.println("getListPageInfo-3-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 				
 			}
 		}
@@ -151,7 +151,7 @@ public class ankusCrawlerNaverNews {
 	}
 	
 	/**
-	 * 뉴스 페이지에서 기간내 마지막 문서 ID를 추출 
+	 * �돱�뒪 �럹�씠吏��뿉�꽌 湲곌컙�궡 留덉�留� 臾몄꽌 ID瑜� 異붿텧 
 	 * @param oid
 	 * @param yd
 	 * @return
@@ -161,7 +161,7 @@ public class ankusCrawlerNaverNews {
 	}
 	
 	/**
-	 * 뉴스 페이지에서 기간내 시작 문서 ID를 추출 
+	 * �돱�뒪 �럹�씠吏��뿉�꽌 湲곌컙�궡 �떆�옉 臾몄꽌 ID瑜� 異붿텧 
 	 * @param oid
 	 * @param yd
 	 * @return
@@ -173,7 +173,7 @@ public class ankusCrawlerNaverNews {
 	NLP nlp2;
 	
 	/**
-	 * DB에서 수집 대상인 뉴스 사이트의 ID로드 
+	 * DB�뿉�꽌 �닔吏� ���긽�씤 �돱�뒪 �궗�씠�듃�쓽 ID濡쒕뱶 
 	 * @return
 	 */
 	public HashMap<String, String> getCrawlingConf(){
@@ -194,7 +194,7 @@ public class ankusCrawlerNaverNews {
 			stmt.close();
 			conn.close();
 		} catch (SQLException e) {
-			System.out.println("getListPageInfo-2-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-2-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		}
 		return cMap;
@@ -211,12 +211,12 @@ public class ankusCrawlerNaverNews {
 		Dictionary dic = new Dictionary();
 		HashMap<String, Integer> fMap = dic.getDicMap("dic.news");
 		
-		//oid 목록 로드 
+		//oid 紐⑸줉 濡쒕뱶 
 		cMap = getCrawlingConf();
 		
 		Object[] oidList = cMap.keySet().toArray();
 		
-		System.out.println("뉴스 수집기간: "+yd1+"~"+yd2);
+		System.out.println("�돱�뒪 �닔吏묎린媛�: "+yd1+"~"+yd2);
 		
 		ArrayList<DOC_DEF> finList = new ArrayList<DOC_DEF>();
 		
@@ -236,7 +236,7 @@ public class ankusCrawlerNaverNews {
 			int start = getFirstAidNumber(oid, yd2)+1;
 			int end = getlastAidNumber(oid, yd1)+2;
 			
-			System.out.println("수집기간 내 존재하는 문서 ID: "+start+"~"+end);
+			System.out.println("�닔吏묎린媛� �궡 議댁옱�븯�뒗 臾몄꽌 ID: "+start+"~"+end);
 			
 			String addr = "http://news.naver.com/main/read.nhn?mode=LPOD&oid="+oid+"&aid=????";
 						
@@ -244,11 +244,11 @@ public class ankusCrawlerNaverNews {
 				String addrI = getAddr(addr, i);
 				BufferedReader br = crawler(addrI);
 				
-//				System.out.println("수집 주소:\t"+addrI);
-				//문서내 정보 추출 
+//				System.out.println("�닔吏� 二쇱냼:\t"+addrI);
+				//臾몄꽌�궡 �젙蹂� 異붿텧 
 				HashMap<String, String> map = getContents(br, addrI, oid, provider, i);
 				
-				//정보가 온전하면 문서 분석 및 저장 
+				//�젙蹂닿� �삩�쟾�븯硫� 臾몄꽌 遺꾩꽍 諛� ���옣 
 				if(map.size() > 0 && map.get("exist").equals("1")){
 					String keywords = map.get("content");
 					
@@ -264,7 +264,7 @@ public class ankusCrawlerNaverNews {
 						}
 					}
 					
-					//문서 내 식품명이 있으면 저장 
+					//臾몄꽌 �궡 �떇�뭹紐낆씠 �엳�쑝硫� ���옣 
 					if(isFood){
 						System.out.println(foodName);
 						String id = DBInputKeyword(map);
@@ -272,10 +272,10 @@ public class ankusCrawlerNaverNews {
 				}
 			
 				try {
-					//idle타임 
+					//idle���엫 
 					Thread.sleep(2);
 				} catch (InterruptedException e) {
-					System.out.println("getListPageInfo-3-오류가 발생했습니다."); 
+					System.out.println("getListPageInfo-3-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 					
 				}				
 			}
@@ -362,7 +362,7 @@ public class ankusCrawlerNaverNews {
 //					//System.out.println(random);
 					Thread.sleep(2);
 				} catch (InterruptedException e) {
-					System.out.println("getListPageInfo-4-오류가 발생했습니다."); 
+					System.out.println("getListPageInfo-4-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 					
 				}				
 			}
@@ -399,7 +399,7 @@ public class ankusCrawlerNaverNews {
 			rs.next();
 			
 			count = rs.getInt(1);
-//			//System.out.println("중복카운트:\t"+count);
+//			//System.out.println("以묐났移댁슫�듃:\t"+count);
 			if(count == 0){
 				PreparedStatement pstmt = conn.prepareStatement(mVal.insertQeuery);
 				
@@ -448,7 +448,7 @@ public class ankusCrawlerNaverNews {
 			stmt.close();
 			conn.close();
 		} catch (SQLException e) {
-			System.out.println("getListPageInfo-9-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-9-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		}
 		
@@ -476,7 +476,7 @@ public class ankusCrawlerNaverNews {
 			conn.close();
 			conn.close();
 		} catch (SQLException e) {
-			System.out.println("getListPageInfo-5-오류가 발생했습니다.");  
+			System.out.println("getListPageInfo-5-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎.");  
 			
 		}
 	}
@@ -509,12 +509,12 @@ public class ankusCrawlerNaverNews {
 //			try {
 //				hd.run(args);
 //			} catch (Exception e) {
-//				System.out.println("getListPageInfo-6-오류가 발생했습니다."); 
+//				System.out.println("getListPageInfo-6-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 //			}
 			
 			f.delete();
 		} catch (IOException e) {
-			System.out.println("getListPageInfo-7-오류가 발생했습니다.");  
+			System.out.println("getListPageInfo-7-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎.");  
 			
 		}
 		
@@ -563,7 +563,7 @@ public class ankusCrawlerNaverNews {
 			stmt.close();
 			conn.close();
 		} catch (SQLException e) {
-			System.out.println("getListPageInfo-8-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-8-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		}
 		
@@ -662,7 +662,7 @@ public class ankusCrawlerNaverNews {
 			conn.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("getListPageInfo-9-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-9-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		}
 		
@@ -694,10 +694,10 @@ public class ankusCrawlerNaverNews {
 			br.close();
 			fr.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("getListPageInfo-10-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-10-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		} catch (IOException e) {
-			System.out.println("getListPageInfo-12-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-12-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		}
 		
@@ -718,7 +718,7 @@ public class ankusCrawlerNaverNews {
 				sb.append(line+"\r\n");
 			}
 		} catch (IOException e) {
-			System.out.println("getListPageInfo-13-오류가 발생했습니다.");  
+			System.out.println("getListPageInfo-13-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎.");  
 			
 		}
 		
@@ -768,17 +768,17 @@ public class ankusCrawlerNaverNews {
 //				
 //			StringBuffer buf = new StringBuffer();
 //				
-//			buf.append("네이버 블로그 웹페이지 변경 또는 주소체계 변경으로 웹문서가 수집되지 않으므로 유지보수가 필요합니다.");			
+//			buf.append("�꽕�씠踰� 釉붾줈洹� �쎒�럹�씠吏� 蹂�寃� �삉�뒗 二쇱냼泥닿퀎 蹂�寃쎌쑝濡� �쎒臾몄꽌媛� �닔吏묐릺吏� �븡�쑝誘�濡� �쑀吏�蹂댁닔媛� �븘�슂�빀�땲�떎.");			
 //			htmlFileWriter(path, fileName, buf);
 			
 			e.printStackTrace();
-			System.out.println("네이버 블로그 웹페이지 변경 또는 주소체계 변경으로 웹문서가 수집되지 않으므로 유지보수가 필요합니다.");
+			System.out.println("�꽕�씠踰� 釉붾줈洹� �쎒�럹�씠吏� 蹂�寃� �삉�뒗 二쇱냼泥닿퀎 蹂�寃쎌쑝濡� �쎒臾몄꽌媛� �닔吏묐릺吏� �븡�쑝誘�濡� �쑀吏�蹂댁닔媛� �븘�슂�빀�땲�떎.");
 		}
 		try {
-			//idle타임 
+			//idle���엫 
 			Thread.sleep(50);
 		} catch (InterruptedException e) {
-			System.out.println("getListPageInfo-3-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-3-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		}
 		return resMap;
@@ -807,7 +807,7 @@ public class ankusCrawlerNaverNews {
 			bw.close();
 			fw.close();
 		} catch (IOException e) {
-			System.out.println("getListPageInfo-14-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-14-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		}
 		
@@ -851,10 +851,10 @@ public class ankusCrawlerNaverNews {
 			bw.close();
 			fw.close();
 		} catch (FileNotFoundException e) {
-			System.out.println("getListPageInfo-15-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-15-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		} catch (IOException e) {
-			System.out.println("getListPageInfo-16-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-16-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 		}
 		
 	}
@@ -920,7 +920,7 @@ public class ankusCrawlerNaverNews {
 		    retBr = new BufferedReader(new InputStreamReader(entity.getContent(), charset));
 		   
 		} catch (IOException e) {
-			System.out.println("getListPageInfo-18-오류가 발생했습니다.");  
+			System.out.println("getListPageInfo-18-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎.");  
 			
 		}
 	    
@@ -943,8 +943,11 @@ public class ankusCrawlerNaverNews {
 		    bw.close();
 		    fw.close();
 		} catch (IOException e) {
-			System.out.println("getListPageInfo-19-오류가 발생했습니다."); 
+			System.out.println("getListPageInfo-19-�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		}
 	}
 }
+
+//mainclass
+
