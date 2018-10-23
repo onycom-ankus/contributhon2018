@@ -19,14 +19,14 @@ public class ankusCrawler {
 		try {
 			FileWriter fw = new FileWriter("logs/"+sTime+"-time"+args[0]+".txt");
 			BufferedWriter bw = new BufferedWriter(fw);
-			
+			//ㅇㅇ
 			if(args[0].equals("NEWS")){		
 				ankusCrawlerNaverNews news = new ankusCrawlerNaverNews();
 //				if(dueDate < 0){
 //					NewsDetector ndc = new NewsDetector();
 //					ndc.detectDuartion((-1 * dueDate), Integer.parseInt(args[2]));
 //				} else {
-//					
+//					//ㅅㅍㅅㅍ효ㅠㅛ
 //				}
 				news.newsCrawler(dueDate, Integer.parseInt(args[2]));
 				
@@ -103,7 +103,7 @@ public class ankusCrawler {
 			bw.close();
 			fw.close();
 		} catch (IOException e) {
-			System.out.println("오류가 발생했습니다."); 
+			System.out.println("�삤瑜섍� 諛쒖깮�뻽�뒿�땲�떎."); 
 			
 		}
 		
