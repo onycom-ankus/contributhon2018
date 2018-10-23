@@ -949,5 +949,5 @@ public class ankusCrawlerNaverNews {
 	}
 }
 
-//mainclass
+
 
