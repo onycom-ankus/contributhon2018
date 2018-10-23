@@ -10,6 +10,7 @@ import com.onycom.crawler.classifier.NewsDetector;
 import com.onycom.crawler.core.*;
 import com.onycom.crawler.news.ankusCrawlerNaverNews;
 
+//test 
 public class ankusCrawler {
 	public static void main(String[] args){
 		java.util.logging.Logger.getLogger("com.gargoylesoftware").setLevel(Level.OFF); 
