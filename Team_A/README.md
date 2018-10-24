@@ -105,5 +105,5 @@
 
 2. 자동차 이미지 분석 
 - [자동차 여부 구분](https://github.com/onycom-ankus/contributhon2018/tree/master/Team_A/%EB%B6%84%EC%84%9D%ED%8C%80)
-- [자동차 모델 구분](https://github.com/onycom-ankus/contributhon2018/tree/master/Team_A/dl_model/inception/)
-- 모두 Google Inception v3.0 이용
+- [자동차 모델 구분](https://github.com/onycom-ankus/contributhon2018/tree/master/Team_A/dl_model/cnn-keras)
+- 모두 Google Inception v3.0, CNN_KARAS 모델 이용
