@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main.mybatis.dao.FilteredRatingMapper">
+  <resultMap id="frResultMap" type="main.mybatis.dto.FilteredRating">
+    <id column="userindex" jdbcType="BIGINT" property="userindex" />
+    <result column="placeid" jdbcType="BIGINT" property="placeid" />
+    <result column="score" jdbcType="FLOAT" property="score" />
+  </resultMap>
+  
+  
+  <insert id="insertFR" parameterType="main.mybatis.dto.FilteredRating">
+    INSERT INTO filteredratings (userindex,placeid,score)
+    VALUES (#{userindex},#{placeid},#{score})
+  </insert>
+  
+ 
+</mapper>

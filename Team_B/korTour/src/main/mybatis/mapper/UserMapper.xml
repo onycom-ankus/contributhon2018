@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main.mybatis.dao.UserMapper">
+  <resultMap id="UserResultMap" type="main.mybatis.dto.User">
+    <id column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="from_age" jdbcType="INTEGER" property="fromAge" />
+    <result column="to_age" jdbcType="INTEGER" property="toAge" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="residence" jdbcType="VARCHAR" property="residence" />
+    <result column="review_num" jdbcType="INTEGER" property="reviewNum" />
+    <result column="review_helpful" jdbcType="INTEGER" property="reviewHelpful" />
+    <result column="index" jdbcType="INTEGER" property="index" />
+  </resultMap>
+
+  <insert id="insertUser" parameterType="main.mybatis.dto.User">
+    insert into users (user_id, from_age, to_age,
+      gender, residence, review_num, review_helpful
+    )
+    values (#{userId}, #{fromAge}, #{toAge},
+      #{gender}, #{residence}, #{reviewNum}, #{reviewHelpful}
+    )
+  </insert>
+  
+  <select id="findUserByUserId" parameterType="String" resultMap="UserResultMap">
+    SELECT *
+    FROM users
+    WHERE user_id=#{userId}
+  </select>
+	
+  <select id="reviewNumFiltering" parameterType="int" resultMap="UserResultMap">
+    SELECT *
+    FROM users
+	WHERE review_num >=#{rNum}
+  </select>
+
+
+</mapper>

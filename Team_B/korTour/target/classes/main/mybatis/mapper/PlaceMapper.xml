@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main.mybatis.dao.PlaceMapper">
+  <resultMap id="PlaceResultMap" type="main.mybatis.dto.Place">
+    <id column="place_id" jdbcType="VARCHAR" property="placeId" />
+    <result column="place_name" jdbcType="VARCHAR" property="placeName" />
+    <result column="place_address" jdbcType="VARCHAR" property="placeAddress" />
+    <result column="place_phone" jdbcType="VARCHAR" property="placePhone" />
+    <result column="score_average" jdbcType="REAL" property="scoreAverage" />
+    <result column="total_review" jdbcType="INTEGER" property="totalReview" />
+    <result column="keywords" jdbcType="VARCHAR" property="keywords" />
+    <result column="place_image_url" jdbcType="VARCHAR" property="placeImageUrl" />
+  </resultMap>
+
+  <insert id="insertPlace" parameterType="main.mybatis.dto.Place">
+    INSERT INTO places (place_id, place_name,
+      place_address, place_phone, score_average,
+      total_review, keywords, place_image_url
+    )
+    VALUES (#{placeId}, #{placeName},
+      #{placeAddress}, #{placePhone}, #{scoreAverage},
+      #{totalReview}, #{keywords}, #{placeImageUrl}
+    )
+  </insert>
+  
+  <update id="updatePlace" parameterType="main.mybatis.dto.Place">
+    UPDATE places
+    SET place_name = #{placeName},
+      place_address = #{placeAddress},
+      place_phone = #{placePhone},
+      score_average = #{scoreAverage},
+      total_review = #{totalReview},
+	  keywords = #{keywords},
+      place_image_url = #{placeImageUrl}
+    WHERE place_id = #{placeId}
+  </update>
+  
+  <select id="findPlaceByPlaceId" parameterType="String" resultMap="PlaceResultMap">
+    SELECT *
+    FROM places
+    WHERE place_id=#{placeId}
+  </select>
+  
+  <update id="updateKeyword" parameterType="map">
+    UPDATE places
+    SET keywords = #{keyword}
+    WHERE place_id = #{placeId}
+  </update>
+  
+  <select id="findAllAttrCode" resultType="hashmap">
+    SELECT place_id, total_review
+    FROM places
+  </select>
+</mapper>
